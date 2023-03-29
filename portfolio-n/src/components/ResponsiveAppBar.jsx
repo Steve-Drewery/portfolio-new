@@ -5,20 +5,17 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import LoginBar from "./LoginBar";
+import { useNavigate } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
 
 function ResponsiveAppBar(props) {
   const { title, sections } = props;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  let navigate = useNavigate();
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -56,10 +53,10 @@ function ResponsiveAppBar(props) {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={() => navigate("/home")}
               color="white"
             >
-              <MenuIcon />
+              <HomeIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -94,7 +91,7 @@ function ResponsiveAppBar(props) {
                         color: "white",
                       }}
                     >
-                      {section.title}
+                      {section.icon}
                     </Link>
                   </Typography>
                 </MenuItem>
@@ -117,26 +114,7 @@ function ResponsiveAppBar(props) {
           >
             {title}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {sections.map((section) => (
-              <Button
-                key={section.title}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                <Link
-                  key={section.title}
-                  to={section.url}
-                  style={{
-                    textDecoration: "none",
-                    color: "white",
-                  }}
-                >
-                  {section.title}
-                </Link>
-              </Button>
-            ))}
-          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
           <LoginBar />
         </Toolbar>
       </Container>

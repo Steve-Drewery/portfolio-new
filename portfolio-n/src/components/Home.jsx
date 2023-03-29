@@ -3,13 +3,9 @@ import { Box, Stack, Typography } from "@mui/material";
 
 const Home = () => {
   return (
-    <Box
-      sx={{ mt: { lg: "212px", xs: "70px" }, ml: { sm: "50px" } }}
-      position="relative"
-      p="20px"
-    >
-      <Typography color="#FF2625" fontWeight="600" fontSize="26px">
-        Fitness Club
+    <Box>
+      <Typography color="whblackite" fontWeight="600" fontSize="26px">
+        Steve Drewery - Web Development
       </Typography>
       <Typography
         fontWeight={700}
@@ -17,11 +13,11 @@ const Home = () => {
         mb="23px"
         mt="30px"
       >
-        Sweat, Smile <br />
+        Design, Code, Test <br />
         And Repeat
       </Typography>
       <Typography fontSize="22px" fontFamily="Alegreya" lineHeight="35px">
-        Check out the most effective exercises personalized to you
+        Check out my most recent projects
       </Typography>
       <Stack>
         <a
@@ -39,20 +35,9 @@ const Home = () => {
             borderRadius: "4px",
           }}
         >
-          Explore Exercises
+          Explore Projects
         </a>
       </Stack>
-      <Typography
-        fontWeight={600}
-        color="#FF2625"
-        sx={{
-          opacity: "0.1",
-          display: { lg: "block", xs: "none" },
-          fontSize: "200px",
-        }}
-      >
-        Exercise
-      </Typography>
     </Box>
   );
 };
