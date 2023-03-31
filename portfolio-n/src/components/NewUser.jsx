@@ -34,20 +34,25 @@ export default function NewUser() {
       sessionStorage.setItem("user", username);
       dispatch({ type: "setLoggedInUser", data: username });
       dispatch({ type: "setToken", data: token });
-      navigate("/account");
+      navigate("/home");
     });
   }
 
   return (
     <>
-      <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
+      <Stack
+        alignItems={{ xs: "center", lg: "flex-start" }}
+        mt="37px"
+        justifyContent="center"
+        p="20px"
+      >
         <Box position="relative" mb="72px">
           <TextField
             sx={{
               input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-              width: { lg: "200px", xs: "350px" },
+              width: "350px",
               backgroundColor: "#fff",
-              borderRadius: "40px",
+              borderRadius: "6px",
             }}
             height="76px"
             value={formState.name}
@@ -61,9 +66,9 @@ export default function NewUser() {
           <TextField
             sx={{
               input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-              width: { lg: "200px", xs: "350px" },
+              width: "350px",
               backgroundColor: "#fff",
-              borderRadius: "40px",
+              borderRadius: "6px",
             }}
             height="76px"
             value={formState.username}
@@ -77,9 +82,9 @@ export default function NewUser() {
           <TextField
             sx={{
               input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-              width: { lg: "200px", xs: "350px" },
+              width: "350px",
               backgroundColor: "#fff",
-              borderRadius: "40px",
+              borderRadius: "6px",
             }}
             height="76px"
             value={formState.email}
@@ -93,9 +98,9 @@ export default function NewUser() {
           <TextField
             sx={{
               input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-              width: { lg: "200px", xs: "350px" },
+              width: "350px",
               backgroundColor: "#fff",
-              borderRadius: "40px",
+              borderRadius: "6px",
             }}
             height="76px"
             value={formState.password}
@@ -109,9 +114,9 @@ export default function NewUser() {
           <TextField
             sx={{
               input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-              width: { lg: "200px", xs: "350px" },
+              width: "350px",
               backgroundColor: "#fff",
-              borderRadius: "40px",
+              borderRadius: "6px",
             }}
             height="76px"
             value={formState.password_confirmation}
@@ -122,17 +127,7 @@ export default function NewUser() {
           />
           <br></br>
           <br></br>
-          <Button
-            sx={{
-              bgcolor: "#FF2625",
-              color: "#fff",
-              textTransform: "none",
-              width: { lg: "200px", xs: "80px" },
-              fontSize: { lg: "20px", xs: "14px" },
-              height: "56px",
-            }}
-            onClick={handleRegister}
-          >
+          <Button className="btn" onClick={handleRegister}>
             Register
           </Button>
         </Box>

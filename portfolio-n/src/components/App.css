@@ -1,0 +1,49 @@
+body {
+    font-family: 'monospace' !important;
+}
+
+.title {
+    font-weight: 600 !important;
+    font-size: 32px !important;
+}
+
+.btn {
+    background-color: rgba(0, 212, 255, 0.8) !important;
+    color: #fff !important;
+    text-transform: none !important;
+    width: 350px;
+    font-size: 20px !important;
+    height: 56px;
+}
+
+.btn:hover {
+    background-color: rgba(0, 212, 255) !important;
+}
+
+.btn-blog-2 {
+    background-color: rgba(0, 212, 255, 0.8) !important;
+    color: #fff !important;
+    text-transform: none !important;
+    width: 100px;
+    font-size: 20px !important;
+    height: 30px;
+    margin: 10px !important;
+}
+
+.btn-blog-2:hover {
+    background-color: rgba(0, 212, 255) !important;
+}
+
+.newbtn:hover {
+    background-color: rgba(0, 212, 255) !important;
+}
+
+.sidemenu {
+    color: white !important;
+    font-size: 22px;
+}
+
+.sidemenu:hover {
+    color: black !important;
+    font-size: 22px;
+}

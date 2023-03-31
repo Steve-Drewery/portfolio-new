@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, CssBaseline, GlobalStyles } from "@mui/material";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -19,6 +19,9 @@ import WorkIcon from "@mui/icons-material/Work";
 import InfoIcon from "@mui/icons-material/Info";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import BottomBar from "./BottomBar";
+import Blog from "./Blog";
+import "./App.css";
+import Experience from "./Experience";
 
 const sections = [
   {
@@ -60,41 +63,43 @@ function App() {
   };
   const [store, dispatch] = useReducer(reducer, initialState);
   return (
-    <Box disablegutters>
+    <Box>
       <StateContext.Provider value={{ store, dispatch }}>
-        <Box
-          disablegutters
-          width="400px"
-          // backgroundColor="#7bc6cc"
-          sx={{
-            position: "fixed",
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(to left, #2980b9, #6dd5fa, #ffffff)",
-            m: "none",
+        <CssBaseline />
+        <GlobalStyles
+          styles={{
+            body: {
+              // background: "linear-gradient(to left, #2980b9, #6dd5fa, #ffffff)",
+              background: `url(${require("../images/bg-2.jpg")})`,
+            },
           }}
-        >
-          <Sidemenu sections={sections} />
-          <ResponsiveAppBar
-            title="My Portfolio"
-            sections={sections}
-          ></ResponsiveAppBar>
+        />
+        <Sidemenu sections={sections} />
+        <ResponsiveAppBar
+          title="My Portfolio"
+          sections={sections}
+        ></ResponsiveAppBar>
 
-          <Box
-            sx={{ mt: "80px", ml: { xs: "none", md: "300px" } }}
-            position="relative"
-            p="20px"
-          >
-            <Routes>
-              <Route path="/" element={<LoginPage />} />
-              <Route path="home" element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<NewUser />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Box>
+        <Box
+          sx={{
+            mt: "80px",
+            ml: { xs: "none", md: "300px" },
+            mb: { xs: "100px" },
+          }}
+          position="relative"
+          p="20px"
+        >
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="home" element={<Home />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="experience" element={<Experience />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<NewUser />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </Box>
         <BottomBar />
       </StateContext.Provider>

@@ -1,12 +1,17 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  let navigate = useNavigate();
   return (
-    <Box>
-      <Typography color="whblackite" fontWeight="600" fontSize="26px">
-        Steve Drewery - Web Development
-      </Typography>
+    <Box color="white">
+      <Stack alignItems="center" justifyContent="flex-end">
+        <Typography className="title">
+          Steve Drewery - Web Development
+        </Typography>
+      </Stack>
+
       <Typography
         fontWeight={700}
         sx={{ fontSize: { lg: "44px", xs: "40px" } }}
@@ -19,24 +24,23 @@ const Home = () => {
       <Typography fontSize="22px" fontFamily="Alegreya" lineHeight="35px">
         Check out my most recent projects
       </Typography>
+      <br></br>
+      <br></br>
       <Stack>
-        <a
-          href="#exercises"
-          style={{
-            marginTop: "45px",
-            textDecoration: "none",
-            width: "200px",
-            textAlign: "center",
-            background: "#FF2625",
-            padding: "14px",
-            fontSize: "22px",
-            textTransform: "none",
-            color: "white",
-            borderRadius: "4px",
-          }}
+        <Button
+          className="btn"
+          // sx={{
+          //   backgroundColor: "rgba(0,212,255,0.8)",
+          //   color: "#fff",
+          //   textTransform: "none",
+          //   width: "200px",
+          //   fontSize: { lg: "20px", xs: "14px" },
+          //   height: "56px",
+          // }}
+          onClick={() => navigate("/projects")}
         >
-          Explore Projects
-        </a>
+          Explore projects
+        </Button>
       </Stack>
     </Box>
   );

@@ -39,14 +39,14 @@ export default function Login() {
       .catch((error) => console.log(error));
   }
   return (
-    <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
+    <Stack alignItems={{ xs: "center", lg: "flex-start" }} mt="37px" p="20px">
       <Box position="relative" mb="72px">
         <TextField
           sx={{
             input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-            width: { lg: "200px", xs: "350px" },
+            width: "350px",
             backgroundColor: "#fff",
-            borderRadius: "40px",
+            borderRadius: "6px",
           }}
           height="76px"
           value={formState.username}
@@ -60,9 +60,9 @@ export default function Login() {
         <TextField
           sx={{
             input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-            width: { lg: "200px", xs: "350px" },
+            width: "350px",
             backgroundColor: "#fff",
-            borderRadius: "40px",
+            borderRadius: "6px",
           }}
           height="76px"
           value={formState.password}
@@ -73,32 +73,12 @@ export default function Login() {
         />
         <br></br>
         <br></br>
-        <Button
-          sx={{
-            bgcolor: "#FF2625",
-            color: "#fff",
-            textTransform: "none",
-            width: { lg: "200px", xs: "80px" },
-            fontSize: { lg: "20px", xs: "14px" },
-            height: "56px",
-          }}
-          onClick={handleSubmit}
-        >
+        <Button className="btn" onClick={handleSubmit}>
           Login
         </Button>
         <br />
         <br />
-        <Button
-          sx={{
-            bgcolor: "#FF2625",
-            color: "#fff",
-            textTransform: "none",
-            width: { lg: "200px", xs: "80px" },
-            fontSize: { lg: "20px", xs: "14px" },
-            height: "56px",
-          }}
-          onClick={() => navigate("/register")}
-        >
+        <Button className="btn" onClick={() => navigate("/register")}>
           Register
         </Button>
       </Box>

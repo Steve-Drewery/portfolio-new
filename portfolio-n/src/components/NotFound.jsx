@@ -1,10 +1,11 @@
+import { Stack, Typography } from "@mui/material";
 import React from "react";
 
 const NotFound = () => {
   return (
-    <div>
-      <h1>404 Not Found</h1>
-    </div>
+    <Stack>
+      <Typography color="white">404 Not Found</Typography>
+    </Stack>
   );
 };
 
