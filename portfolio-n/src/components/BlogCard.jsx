@@ -13,8 +13,17 @@ import ShareIcon from "@mui/icons-material/Share";
 export default function BlogCard(props) {
   const { title, description } = props;
   return (
-    <Card sx={{ width: "100%" }}>
+    <Card
+      sx={{
+        width: "100%",
+        backgroundColor: "#606060",
+        opacity: "0.95",
+        color: "white",
+        borderRadius: "20px",
+      }}
+    >
       <CardHeader
+        sx={{ color: "inherit", backgroundColor: "#343434" }}
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
             R
@@ -24,7 +33,7 @@ export default function BlogCard(props) {
         subheader="September 14, 2016"
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="inherit">
           {description}
         </Typography>
       </CardContent>

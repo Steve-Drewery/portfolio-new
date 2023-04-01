@@ -14,7 +14,14 @@ import { CardMedia } from "@mui/material";
 export default function AboutCard(props) {
   const { title, description } = props;
   return (
-    <Card sx={{ maxWidth: "700px" }}>
+    <Card
+      sx={{
+        maxWidth: "700px",
+        backgroundColor: "#606060",
+        color: "white",
+        borderRadius: "20px",
+      }}
+    >
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -31,7 +38,7 @@ export default function AboutCard(props) {
         image={require("../images/heli.jpg")}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="inherit">
           {description}
         </Typography>
       </CardContent>

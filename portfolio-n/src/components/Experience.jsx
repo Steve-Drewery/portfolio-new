@@ -22,13 +22,11 @@ const Experience = () => {
   return (
     <Stack alignItems={{ xs: "center", lg: "flex-start" }} mt="37px" p="20px">
       <Box pl="20px" m="5px">
-        <Typography className="title" color="#66fcf1">
-          Experience
-        </Typography>
+        <Typography className="title3">Experience</Typography>
       </Box>
       <Stack>
         {posts.map(({ title, description }, id) => (
-          <Box key={id} paddingTop="40px">
+          <Box key={id} paddingBottom="40px">
             <BlogCard
               key={`${id}-item`}
               title={title}

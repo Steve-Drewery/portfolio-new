@@ -75,9 +75,7 @@ const Blog = () => {
   return (
     <Stack alignItems={{ xs: "center", lg: "flex-start" }} mt="37px" p="20px">
       <Box pl="20px" m="5px">
-        <Typography className="title" color="#66fcf1">
-          My Blog
-        </Typography>
+        <Typography className="title3">My Blog</Typography>
       </Box>
 
       <NewPost addPosts={addPosts} />

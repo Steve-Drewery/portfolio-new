@@ -6,19 +6,19 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import LoginBar from "./LoginBar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
+import { MenuItem } from "@mui/material";
 
 function ResponsiveAppBar(props) {
-  const { title } = props;
+  const { title, sections } = props;
   let navigate = useNavigate();
 
   return (
     <AppBar
       position="fixed"
       style={{
-        background:
-          "linear-gradient(135deg, rgba(132,206,235,1) 0%, rgba(0,212,255,1) 43%, rgba(9,9,121,1) 87%)",
+        background: "#080808",
       }}
     >
       <Container maxWidth="xl">
@@ -48,7 +48,7 @@ function ResponsiveAppBar(props) {
               onClick={() => navigate("/home")}
               color="white"
             >
-              <HomeIcon />
+              <HomeIcon className="icon" />
             </IconButton>
           </Box>
           <Typography
@@ -67,7 +67,25 @@ function ResponsiveAppBar(props) {
           >
             {title}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {sections.map((section) => (
+              <MenuItem
+                key={section.title}
+                // style={{ color: "white", backgroundColor: "rgba(102, 252, 241)" }}
+                className="sidemenu"
+              >
+                <Link
+                  to={section.url}
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                  }}
+                >
+                  {section.icon} {section.title}
+                </Link>
+              </MenuItem>
+            ))}
+          </Box>
           <LoginBar />
         </Toolbar>
       </Container>

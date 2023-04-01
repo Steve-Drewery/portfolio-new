@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-const Contact = () => {
+const Services = () => {
   return (
     <Box>
-      <Typography className="title">Contact</Typography>
+      <Typography className="title">Services</Typography>
     </Box>
   );
 };
 
-export default Contact;
+export default Services;

@@ -11,7 +11,6 @@ import LoginPage from "./Login";
 import NewUser from "./NewUser";
 import NotFound from "./NotFound";
 import reducer from "../utils/StateReducer";
-import Sidemenu from "./Sidemenu";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
@@ -22,6 +21,7 @@ import BottomBar from "./BottomBar";
 import Blog from "./Blog";
 import "./App.css";
 import Experience from "./Experience";
+import Services from "./Services";
 
 const sections = [
   {
@@ -66,15 +66,7 @@ function App() {
     <Box>
       <StateContext.Provider value={{ store, dispatch }}>
         <CssBaseline />
-        <GlobalStyles
-          styles={{
-            body: {
-              // background: "linear-gradient(to left, #2980b9, #6dd5fa, #ffffff)",
-              background: `url(${require("../images/bg-2.jpg")})`,
-            },
-          }}
-        />
-        <Sidemenu sections={sections} />
+        <GlobalStyles />
         <ResponsiveAppBar
           title="My Portfolio"
           sections={sections}
@@ -96,6 +88,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="experience" element={<Experience />} />
+            <Route path="services" element={<Services />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<NewUser />} />
             <Route path="*" element={<NotFound />} />

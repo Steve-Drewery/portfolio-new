@@ -19,13 +19,11 @@ const Blog = () => {
   return (
     <Stack alignItems={{ xs: "center", lg: "flex-start" }} mt="37px" p="20px">
       <Box pl="20px" m="5px">
-        <Typography className="title" color="#66fcf1">
-          About Me
-        </Typography>
+        <Typography className="title3">About Me</Typography>
       </Box>
       <Stack>
         {posts.map(({ title, description }, id) => (
-          <Box key={id} paddingTop="40px">
+          <Box key={id} paddingBottom="40px">
             <AboutCard
               key={`${id}-item`}
               title={title}

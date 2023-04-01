@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/authServices";
 import { useGlobalState } from "../utils/StateContext";
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
 export default function Login() {
   const initialFormState = {
@@ -41,6 +41,7 @@ export default function Login() {
   return (
     <Stack alignItems={{ xs: "center", lg: "flex-start" }} mt="37px" p="20px">
       <Box position="relative" mb="72px">
+        <Typography className="title2">Welcome</Typography>
         <TextField
           sx={{
             input: { fontWeight: "700", border: "none", borderRadius: "4px" },
