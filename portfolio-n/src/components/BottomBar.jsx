@@ -19,27 +19,35 @@ export default function BottomBar() {
       <CssBaseline />
       <AppBar
         sx={{
-          backgroundColor: "black",
+          backgroundColor: "rgba(0,0,0,0)",
           top: "auto",
           bottom: 20,
           opacity: "0.8",
           width: "100%",
           display: { xs: "flex", md: "none" },
-          justifySelf: "center",
-          alignSelf: "center",
+          justifyContent: "center",
+          alignContent: "center",
         }}
       >
         <Toolbar
           style={{
-            color: "white",
-            display: "flex",
+            backgroundColor: "#171515",
             justifyContent: "space-around",
+            left: "50%",
+            marginLeft: "-180px",
+            textTransform: "none",
+            width: "350px",
+            textAlign: "center",
+            lineHeight: "30px",
+            color: "#666",
+            transition: ".5s",
+            borderRadius: "50px",
           }}
         >
           <div>
             <Link to="/blog">
               <IconButton>
-                <MenuBookIcon className="icon" />
+                <MenuBookIcon className="btn" />
               </IconButton>
             </Link>
           </div>
@@ -51,7 +59,7 @@ export default function BottomBar() {
               }}
             >
               <IconButton>
-                <FitnessCenterIcon className="icon" />
+                <FitnessCenterIcon className="btn" />
               </IconButton>
             </Link>
           </div>
@@ -64,7 +72,7 @@ export default function BottomBar() {
               }}
             >
               <IconButton>
-                <WorkIcon className="icon" />
+                <WorkIcon className="btn" />
               </IconButton>
             </Link>
           </div>
@@ -77,7 +85,7 @@ export default function BottomBar() {
               }}
             >
               <IconButton>
-                <InfoIcon className="icon" />
+                <InfoIcon className="btn" />
               </IconButton>
             </Link>
           </div>
@@ -90,7 +98,7 @@ export default function BottomBar() {
               }}
             >
               <IconButton>
-                <ContactsIcon className="icon" />
+                <ContactsIcon className="btn" />
               </IconButton>
             </Link>
           </div>

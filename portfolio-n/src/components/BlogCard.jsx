@@ -15,7 +15,6 @@ export default function BlogCard(props) {
   return (
     <Card
       sx={{
-        width: "100%",
         backgroundColor: "#606060",
         opacity: "0.95",
         color: "white",

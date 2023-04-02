@@ -20,13 +20,13 @@ const posts = [
 
 const Experience = () => {
   return (
-    <Stack alignItems={{ xs: "center", lg: "flex-start" }} mt="37px" p="20px">
+    <Stack alignItems="center" mt="37px" p="20px">
       <Box pl="20px" m="5px">
         <Typography className="title3">Experience</Typography>
       </Box>
-      <Stack>
+      <Box display="grid" gridTemplateColumns="repeat(2,2fr)">
         {posts.map(({ title, description }, id) => (
-          <Box key={id} paddingBottom="40px">
+          <Box key={id} padding="40px" display="flex">
             <BlogCard
               key={`${id}-item`}
               title={title}
@@ -36,7 +36,7 @@ const Experience = () => {
             </BlogCard>
           </Box>
         ))}
-      </Stack>
+      </Box>
     </Stack>
   );
 };

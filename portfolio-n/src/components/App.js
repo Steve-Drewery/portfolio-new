@@ -73,12 +73,17 @@ function App() {
         ></ResponsiveAppBar>
 
         <Box
+          display="flex"
+          alignitems="flex-end"
           sx={{
             mt: "80px",
-            ml: { xs: "none", md: "300px" },
+            left: "50%",
+            ml: { xs: "none", sm: "none", md: "50%" },
+
             mb: { xs: "100px" },
+            alignItems: "center",
+            width: "100%",
           }}
-          position="relative"
           p="20px"
         >
           <Routes>

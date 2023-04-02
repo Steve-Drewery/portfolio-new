@@ -117,7 +117,9 @@ const Blog = () => {
           </Card>
         </>
       )}
-      <Typography color="white">Posts</Typography>
+      <Typography className="title2" padding="20px">
+        Posts
+      </Typography>
       <Stack>
         {posts.map(({ title, description }, id) => (
           <Box key={id}>
@@ -132,6 +134,7 @@ const Blog = () => {
               <Button
                 className="btn-blog-2"
                 key={`${id}-button`}
+                sx={{ margin: "10px" }}
                 onClick={() => deletePost(id)}
               >
                 Delete
@@ -139,6 +142,7 @@ const Blog = () => {
               <Button
                 className="btn-blog-2"
                 key={`${id}-edit-button`}
+                sx={{ margin: "10px" }}
                 onClick={() => initialiseEditBox(id)}
               >
                 Edit

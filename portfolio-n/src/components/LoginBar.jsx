@@ -42,9 +42,11 @@ export default function LoginBar() {
       <Box sx={{ flexGrow: 0, display: "flex" }}>
         <Box display="flex" justifyContent="flex-end" sx={{ pt: 1, pb: 1 }}>
           <Button
+            className="btn-blog-2"
             style={{
               textDecoration: "none",
               color: "white",
+              margin: "-10px",
             }}
             onClick={handleLogout}
           >

@@ -48,7 +48,7 @@ function ResponsiveAppBar(props) {
               onClick={() => navigate("/home")}
               color="white"
             >
-              <HomeIcon className="icon" />
+              <HomeIcon className="btn" />
             </IconButton>
           </Box>
           <Typography
@@ -75,10 +75,12 @@ function ResponsiveAppBar(props) {
                 className="sidemenu"
               >
                 <Link
+                  className="btn-blog-2"
                   to={section.url}
                   style={{
                     textDecoration: "none",
-                    color: "white",
+                    width: "150px",
+                    margin: "-10px",
                   }}
                 >
                   {section.icon} {section.title}
